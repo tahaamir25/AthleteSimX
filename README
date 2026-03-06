@@ -1,0 +1,150 @@
+Athlete Simulator (C++ Console Game)
+
+A small C++ console game where you manage and train an athlete. The goal is to keep your athlete in good condition by balancing their strength, happiness, and hunger while they train and compete.
+
+You can choose between different athlete types, perform training activities, and manage their stats over time. If their stats fall too low, your athlete will retire.
+
+This project was built as a way to practice object-oriented programming in C++, including inheritance, class design, and file input/output.
+
+Features
+
+Create a new athlete or load a previously saved one
+
+Choose between different athlete types:
+
+Soccer Player
+
+Basketball Player
+
+Boxer
+
+Train, feed, or play matches with your athlete
+
+Sport-specific activities (ex: dunking, sparring, free kicks)
+
+Track athlete stats:
+
+Happiness
+
+Strength
+
+Hunger
+
+Save and load progress using files
+
+ASCII animations for certain actions
+
+How the Game Works
+
+At the start of the program you can either:
+
+Load a saved athlete
+
+Create a new athlete
+
+The game then shows a menu where you can perform different actions with your athlete.
+
+Example actions include:
+
+Train your athlete
+
+Feed them
+
+Send them to a match
+
+Practice sport-specific skills
+
+Each action affects the athlete's stats.
+
+For example:
+
+Training increases strength but decreases hunger.
+
+Playing increases happiness but reduces strength and hunger.
+
+Feeding increases hunger but reduces happiness.
+
+These stat changes are handled in the base Athlete class. 
+
+Athlete
+
+If a stat drops below zero, the athlete retires and the game ends.
+
+Object-Oriented Design
+
+The program uses inheritance to represent different athlete types.
+
+Athlete (base class)
+│
+├── soccerPlayer
+├── basketPlayer
+└── boxer
+
+The base class stores shared attributes:
+
+name
+
+hunger
+
+strength
+
+happiness
+
+Each sport then adds its own unique actions such as:
+
+Soccer: free kicks, penalties, passing
+
+Basketball: dunking, free throws, three-pointers
+
+Boxing: heavy bag training, sparring, jump rope
+
+Example of the base athlete structure: 
+
+Athlete
+
+File Structure
+main.cpp            → main game loop
+Athlete.h/.cpp      → base athlete class
+soccerPlayer.h/.cpp → soccer athlete class
+basketPlayer.h/.cpp → basketball athlete class
+boxer.h/.cpp        → boxer athlete class
+Makefile            → compile instructions
+Building and Running
+
+Compile using g++:
+
+g++ main.cpp Athlete.cpp soccerPlayer.cpp basketPlayer.cpp boxer.cpp -o athlete_sim
+
+Run the program:
+
+./athlete_sim
+
+Follow the prompts in the terminal to interact with your athlete.
+
+What I Learned
+
+This project helped reinforce several C++ concepts:
+
+Object-oriented programming
+
+Inheritance and polymorphism
+
+Class design and encapsulation
+
+File input/output for saving game state
+
+Structuring multi-file C++ programs
+
+Future Improvements
+
+Possible improvements for the project:
+
+Add more athlete types
+
+Add a scoring or career progression system
+
+Improve input validation
+
+Add a GUI instead of console output
+
+Add more game events or randomness
