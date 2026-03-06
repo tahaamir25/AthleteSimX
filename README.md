@@ -1,10 +1,12 @@
-# AthleteSimX (C++ Console Game)
+# AthleteSimX
 
 A small C++ console game where you manage and train an athlete. The goal is to keep your athlete in good condition by balancing their **strength, happiness, and hunger** while they train and compete.
 
 You can choose between different athlete types, perform training activities, and manage their stats over time. If their stats fall too low, your athlete will retire.
 
-This project was built as a way to practice **object-oriented programming in C++**, including inheritance, class design, and file input/output.
+This project was built to practice **object-oriented programming in C++**, including inheritance, class design, and file input/output.
+
+---
 
 ## Features
 
@@ -22,9 +24,11 @@ This project was built as a way to practice **object-oriented programming in C++
 - Save and load progress using files
 - ASCII animations for certain actions
 
+---
+
 ## How the Game Works
 
-At the start of the program, you can either:
+At the start of the program you can either:
 
 - Load a saved athlete
 - Create a new athlete
@@ -48,6 +52,8 @@ For example:
 
 If a stat drops below zero, the athlete retires and the game ends.
 
+---
+
 ## Object-Oriented Design
 
 The program uses inheritance to represent different athlete types.
@@ -59,67 +65,73 @@ Athlete (base class)
 ├── basketPlayer
 └── boxer
 ```
+
+### Base Athlete Attributes
+
 The base class stores shared attributes:
 
-name
+- `name`
+- `hunger`
+- `strength`
+- `happiness`
 
-hunger
+Each sport then adds its own unique actions:
 
-strength
+- **Soccer:** free kicks, penalties, passing  
+- **Basketball:** dunking, free throws, three-pointers  
+- **Boxing:** heavy bag training, sparring, jump rope  
 
-happiness
+---
 
-Each sport then adds its own unique actions such as:
+## File Structure
 
-Soccer: free kicks, penalties, passing
-
-Basketball: dunking, free throws, three-pointers
-
-Boxing: heavy bag training, sparring, jump rope
-
-File Structure
+```text
 main.cpp            → main game loop
-Athlete.h/.cpp      → base athlete class
+Athlete.h / .cpp    → base athlete class
 soccerPlayer.h/.cpp → soccer athlete class
 basketPlayer.h/.cpp → basketball athlete class
 boxer.h/.cpp        → boxer athlete class
 Makefile            → compile instructions
+```
 
-Building and Running
-Compile using g++:
+---
 
+## Building and Running
+
+Compile using **g++**:
+
+```bash
 g++ main.cpp Athlete.cpp soccerPlayer.cpp basketPlayer.cpp boxer.cpp -o athlete_sim
+```
 
 Run the program:
 
+```bash
 ./athlete_sim
+```
 
 Follow the prompts in the terminal to interact with your athlete.
 
-What I Learned
+---
+
+## What I Learned
 
 This project helped reinforce several C++ concepts:
 
-Object-oriented programming
+- Object-oriented programming
+- Inheritance and polymorphism
+- Class design and encapsulation
+- File input/output for saving game state
+- Structuring multi-file C++ programs
 
-Inheritance and polymorphism
+---
 
-Class design and encapsulation
-
-File input/output for saving game state
-
-Structuring multi-file C++ programs
-
-Future Improvements
+## Future Improvements
 
 Possible improvements for the project:
 
-Add more athlete types
-
-Add a scoring or career progression system
-
-Improve input validation
-
-Add a GUI instead of console output
-
-Add more game events or randomness
+- Add more athlete types
+- Add a scoring or career progression system
+- Improve input validation
+- Add a GUI instead of console output
+- Add more game events or randomness
